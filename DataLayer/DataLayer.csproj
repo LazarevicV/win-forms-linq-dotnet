@@ -112,6 +112,7 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderDetailsDL.cs" />
+    <Compile Include="OrderDL.cs" />
     <Compile Include="Orders_Qry.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -127,6 +128,7 @@
     <Compile Include="Product.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductDL.cs" />
     <Compile Include="Products_Above_Average_Price.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -155,6 +157,7 @@
     <Compile Include="Shipper.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
+    <Compile Include="ShipperDL.cs" />
     <Compile Include="Summary_of_Sales_by_Quarter.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
