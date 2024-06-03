@@ -53,16 +53,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmEditOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmEditOrder.Designer.cs">
+      <DependentUpon>frmEditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreviewOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreviewOrderDetail.Designer.cs">
+      <DependentUpon>frmPreviewOrderDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreviewOrderDetail.resx">
+      <DependentUpon>frmPreviewOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +115,10 @@
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
       <Project>{181f6596-a4dd-44c1-a16c-9c5d31cefb6d}</Project>
       <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{fcdfbf60-0052-491e-839b-42d3b124b752}</Project>
+      <Name>DataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c1d7698f-59cc-40a2-826a-dfb7eb4a14d3}</Project>
