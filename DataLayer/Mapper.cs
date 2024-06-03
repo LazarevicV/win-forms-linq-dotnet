@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class Mapper
+    public class Mapper
     {
         #region Classes
         public static EmployeeDTO MapToDTO(Employee e)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    internal class CustomerDL
+    public class CustomerDL
     {
         private readonly NorthwindEntities _context;
 
