@@ -158,6 +158,9 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="ShipperDL.cs" />
+    <Compile Include="spSearchOrders_Result.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="Summary_of_Sales_by_Quarter.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
