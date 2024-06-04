@@ -1,4 +1,4 @@
-﻿namespace DrugiKolokvijumskiZadatak
+﻿namespace DrugiKolokvijumZadatak
 {
     partial class frmNewOrder
     {
@@ -60,6 +60,7 @@
             this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -69,6 +70,7 @@
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dgvOrderDetails
             // 
@@ -118,6 +120,7 @@
             this.btnAddItem.TabIndex = 38;
             this.btnAddItem.Text = "Add New Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // lbl
             // 
@@ -171,6 +174,7 @@
             this.btnAddOrder.TabIndex = 32;
             this.btnAddOrder.Text = "Add New Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // label3
             // 
@@ -222,6 +226,7 @@
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(121, 24);
             this.cmbEmployee.TabIndex = 26;
+            this.cmbEmployee.SelectedIndexChanged += new System.EventHandler(this.cmbEmployee_SelectedIndexChanged);
             // 
             // lblEmployee
             // 
@@ -261,6 +266,7 @@
             this.MaximumSize = new System.Drawing.Size(816, 532);
             this.Name = "frmNewOrder";
             this.Text = "frmNewOrder";
+            this.Load += new System.EventHandler(this.frmNewOrder_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
