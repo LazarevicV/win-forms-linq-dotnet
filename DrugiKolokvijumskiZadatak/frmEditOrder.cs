@@ -35,5 +35,55 @@ namespace DrugiKolokvijumskiZadatak
             employeeBl = new EmployeeBL();
             shipperBl = new ShipperBL();
         }
+
+        private void frmEditOrder_Load(object sender, EventArgs e)
+        {
+            cmbEmployee.DataSource = employeeBl.GetAllEmployees();
+            cmbEmployee.DisplayMember = "FirstName";
+            cmbEmployee.ValueMember = "EmployeeID";
+            cmbEmployee.SelectedValue = orderDTO.EmployeeID;
+
+            cmbShipper.DataSource = shipperBl.getAllShippers();
+            cmbShipper.DisplayMember = "CompanyName";
+            cmbShipper.ValueMember = "ShipperID";
+
+
+            cmbCustomer.DataSource = customerBl.getAllCustomers();
+            cmbCustomer.DisplayMember = "CompanyName";
+            cmbCustomer.ValueMember = "CustomerID";
+
+            cmbProduct.DataSource = productBl.getAllProducts();
+            cmbProduct.DisplayMember = "ProductName";
+            cmbProduct.ValueMember = "ProductID";
+
+            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txtDiscount.Text = detailsDTO.Discount.ToString();
+            txtPrice.Text = detailsDTO.UnitPrice.ToString();
+            txtQuantity.Text = detailsDTO.Quantity.ToString();
+        }
+
+        private void btnUpdateOrder_Click(object sender, EventArgs e)
+        {
+            OrderBL orderBl = new OrderBL();
+            OrderDetailsBL orderDetailsBl = new OrderDetailsBL();
+            try
+            {
+                orderDTO.CustomerID = cmbCustomer.SelectedValue.ToString();
+                orderDTO.EmployeeID = int.Parse(cmbEmployee.SelectedValue.ToString());
+                orderBl.Save(orderDTO);
+
+                detailsDTO.ProductID = int.Parse(cmbProduct.SelectedValue.ToString());
+                detailsDTO.Quantity = short.Parse(txtQuantity.Text);
+                detailsDTO.UnitPrice = decimal.Parse(txtPrice.Text);
+                detailsDTO.Discount = float.Parse(txtDiscount.Text);
+                orderDetailsBl.Save(detailsDTO);
+
+                MessageBox.Show("Order updated succesfully!");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Something went wrong, Error: \r\n\r\n" + err.Message);
+            }
+        }
     }
 }
