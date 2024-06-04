@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +24,13 @@ namespace DrugiKolokvijumskiZadatak
 
         private void frmPreviewOrderDetail_Load(object sender, EventArgs e)
         {
+            OrderDetailsDTO orderDetail = new OrderDetailsBL().GetOrderDetail(orderDetailID);
+            ProductDTO product = new ProductBL().getProduct(orderDetail.ProductID);
 
+            lblProductName.Text = product.ProductName;
+            lblQuantity.Text = orderDetail.Quantity.ToString();
+            lblDiscount.Text = (orderDetail.Discount * 100).ToString() + "%";
+            lblPrice.Text = orderDetail.UnitPrice.ToString();
         }
     }
 }
