@@ -30,26 +30,27 @@ namespace DrugiKolokvijumskiZadatak
 
         private void SearchOrders()
         {
-            NorthwindEntities db = new NorthwindEntities();
-
-            int? selectedEmployeeId = null;
-            if (cmbEmployee.SelectedIndex != -1 && cmbEmployee.SelectedValue != null && cmbEmployee.SelectedValue is int)
+            using (NorthwindEntities db = new NorthwindEntities())
             {
-                selectedEmployeeId = (int)cmbEmployee.SelectedValue;
+                int? selectedEmployeeId = null;
+                if (cmbEmployee.SelectedIndex != -1 && cmbEmployee.SelectedValue != null && cmbEmployee.SelectedValue is int)
+                {
+                    selectedEmployeeId = (int)cmbEmployee.SelectedValue;
+                }
+
+                string selectedCustomerId = cmbCustomer.SelectedIndex != -1 ? cmbCustomer.SelectedValue.ToString() : null;
+
+                int? selectedProductId = null;
+                if (cmbProduct.SelectedIndex != -1 && cmbProduct.SelectedValue != null && cmbProduct.SelectedValue is int)
+                {
+                    selectedProductId = (int)cmbProduct.SelectedValue;
+                }
+
+                var results = db.spSearchOrders(selectedEmployeeId, selectedCustomerId, selectedProductId).ToList();
+                dataGrid.DataSource = results.GroupBy(o => o.OrderID).Select(g => g.First()).ToList();
             }
-
-            string selectedCustomerId = cmbCustomer.SelectedIndex != -1 ? cmbCustomer.SelectedValue.ToString() : null;
-
-            int? selectedProductId = null;
-            if (cmbProduct.SelectedIndex != -1 && cmbProduct.SelectedValue != null && cmbProduct.SelectedValue is int)
-            {
-                selectedProductId = (int)cmbProduct.SelectedValue;
-            }
-
-            var results = db.spSearchOrders(selectedEmployeeId, selectedCustomerId, selectedProductId).ToList();
-            dataGrid.DataSource = results;
-
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -92,6 +93,7 @@ namespace DrugiKolokvijumskiZadatak
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            dataGrid.Columns.Clear();
             // Display preview button for order details
             DataGridViewButtonColumn btnColumnPreview = new DataGridViewButtonColumn();
             btnColumnPreview.HeaderText = "Order Details";
