@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnUpdateOrder = new System.Windows.Forms.Button();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.btnUpdateOrder = new System.Windows.Forms.Button();
+            this.btnUpdateItem = new System.Windows.Forms.Button();
             this.lbl = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.cmbProduct = new System.Windows.Forms.ComboBox();
@@ -45,150 +47,173 @@
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cmbEmployee = new System.Windows.Forms.ComboBox();
             this.lblEmployee = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnUpdateOrder
+            // 
+            this.btnUpdateOrder.Location = new System.Drawing.Point(646, 65);
+            this.btnUpdateOrder.Name = "btnUpdateOrder";
+            this.btnUpdateOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateOrder.TabIndex = 60;
+            this.btnUpdateOrder.Text = "Update Order";
+            this.btnUpdateOrder.UseVisualStyleBackColor = true;
+            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click_1);
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(48, 236);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowHeadersWidth = 51;
+            this.dataGrid.RowTemplate.Height = 24;
+            this.dataGrid.Size = new System.Drawing.Size(707, 150);
+            this.dataGrid.TabIndex = 59;
+            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
+            this.dataGrid.SelectionChanged += new System.EventHandler(this.DataGrid_SelectionChanged);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(192, 254);
+            this.lblPrice.Location = new System.Drawing.Point(183, 166);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(38, 16);
-            this.lblPrice.TabIndex = 56;
+            this.lblPrice.TabIndex = 58;
             this.lblPrice.Text = "Price";
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(471, 274);
+            this.txtDiscount.Location = new System.Drawing.Point(462, 186);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(121, 22);
-            this.txtDiscount.TabIndex = 55;
+            this.txtDiscount.TabIndex = 57;
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(332, 274);
+            this.txtQuantity.Location = new System.Drawing.Point(323, 186);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(121, 22);
-            this.txtQuantity.TabIndex = 54;
+            this.txtQuantity.TabIndex = 56;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(195, 274);
+            this.txtPrice.Location = new System.Drawing.Point(186, 186);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(121, 22);
-            this.txtPrice.TabIndex = 53;
+            this.txtPrice.TabIndex = 55;
             // 
-            // btnUpdateOrder
+            // btnUpdateItem
             // 
-            this.btnUpdateOrder.Location = new System.Drawing.Point(609, 274);
-            this.btnUpdateOrder.Name = "btnUpdateOrder";
-            this.btnUpdateOrder.Size = new System.Drawing.Size(138, 24);
-            this.btnUpdateOrder.TabIndex = 52;
-            this.btnUpdateOrder.Text = "Update Item";
-            this.btnUpdateOrder.UseVisualStyleBackColor = true;
-            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
+            this.btnUpdateItem.Location = new System.Drawing.Point(617, 186);
+            this.btnUpdateItem.Name = "btnUpdateItem";
+            this.btnUpdateItem.Size = new System.Drawing.Size(138, 24);
+            this.btnUpdateItem.TabIndex = 54;
+            this.btnUpdateItem.Text = "Update Item";
+            this.btnUpdateItem.UseVisualStyleBackColor = true;
+            this.btnUpdateItem.Click += new System.EventHandler(this.btnUpdateItem_Click);
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(468, 255);
+            this.lbl.Location = new System.Drawing.Point(459, 167);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(59, 16);
-            this.lbl.TabIndex = 51;
+            this.lbl.TabIndex = 53;
             this.lbl.Text = "Discount";
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(329, 255);
+            this.lblQuantity.Location = new System.Drawing.Point(320, 167);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(55, 16);
-            this.lblQuantity.TabIndex = 50;
+            this.lblQuantity.TabIndex = 52;
             this.lblQuantity.Text = "Quantity";
             // 
             // cmbProduct
             // 
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(57, 274);
+            this.cmbProduct.Location = new System.Drawing.Point(48, 186);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(121, 24);
-            this.cmbProduct.TabIndex = 49;
+            this.cmbProduct.TabIndex = 51;
             // 
             // lblProduct
             // 
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(54, 255);
+            this.lblProduct.Location = new System.Drawing.Point(45, 167);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(53, 16);
-            this.lblProduct.TabIndex = 48;
+            this.lblProduct.TabIndex = 50;
             this.lblProduct.Text = "Product";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(471, 180);
+            this.lblDate.Location = new System.Drawing.Point(462, 92);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(44, 16);
-            this.lblDate.TabIndex = 47;
+            this.lblDate.TabIndex = 49;
             this.lblDate.Text = "DATE";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(471, 153);
+            this.label3.Location = new System.Drawing.Point(462, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
-            this.label3.TabIndex = 46;
+            this.label3.TabIndex = 48;
             this.label3.Text = "Date";
             // 
             // cmbShipper
             // 
             this.cmbShipper.FormattingEnabled = true;
-            this.cmbShipper.Location = new System.Drawing.Point(332, 172);
+            this.cmbShipper.Location = new System.Drawing.Point(323, 84);
             this.cmbShipper.Name = "cmbShipper";
             this.cmbShipper.Size = new System.Drawing.Size(121, 24);
-            this.cmbShipper.TabIndex = 45;
+            this.cmbShipper.TabIndex = 47;
             // 
             // lblShipper
             // 
             this.lblShipper.AutoSize = true;
-            this.lblShipper.Location = new System.Drawing.Point(329, 153);
+            this.lblShipper.Location = new System.Drawing.Point(320, 65);
             this.lblShipper.Name = "lblShipper";
             this.lblShipper.Size = new System.Drawing.Size(54, 16);
-            this.lblShipper.TabIndex = 44;
+            this.lblShipper.TabIndex = 46;
             this.lblShipper.Text = "Shipper";
             // 
             // cmbCustomer
             // 
             this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(195, 172);
+            this.cmbCustomer.Location = new System.Drawing.Point(186, 84);
             this.cmbCustomer.Name = "cmbCustomer";
             this.cmbCustomer.Size = new System.Drawing.Size(121, 24);
-            this.cmbCustomer.TabIndex = 43;
+            this.cmbCustomer.TabIndex = 45;
             // 
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Location = new System.Drawing.Point(192, 153);
+            this.lblCustomer.Location = new System.Drawing.Point(183, 65);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(64, 16);
-            this.lblCustomer.TabIndex = 42;
+            this.lblCustomer.TabIndex = 44;
             this.lblCustomer.Text = "Customer";
             // 
             // cmbEmployee
             // 
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(57, 172);
+            this.cmbEmployee.Location = new System.Drawing.Point(48, 84);
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(121, 24);
-            this.cmbEmployee.TabIndex = 41;
+            this.cmbEmployee.TabIndex = 43;
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Location = new System.Drawing.Point(54, 153);
+            this.lblEmployee.Location = new System.Drawing.Point(45, 65);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(69, 16);
-            this.lblEmployee.TabIndex = 40;
+            this.lblEmployee.TabIndex = 42;
             this.lblEmployee.Text = "Employee";
             // 
             // frmEditOrder
@@ -196,11 +221,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateOrder);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.txtDiscount);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.btnUpdateOrder);
+            this.Controls.Add(this.btnUpdateItem);
             this.Controls.Add(this.lbl);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.cmbProduct);
@@ -216,6 +243,7 @@
             this.Name = "frmEditOrder";
             this.Text = "frmEditOrder";
             this.Load += new System.EventHandler(this.frmEditOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,11 +251,13 @@
 
         #endregion
 
+        private System.Windows.Forms.Button btnUpdateOrder;
+        private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Button btnUpdateOrder;
+        private System.Windows.Forms.Button btnUpdateItem;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.ComboBox cmbProduct;

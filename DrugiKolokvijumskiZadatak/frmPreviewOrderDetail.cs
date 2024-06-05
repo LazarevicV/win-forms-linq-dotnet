@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataLayer;
 using Domain;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace DrugiKolokvijumskiZadatak
     public partial class frmPreviewOrderDetail : Form
     {
         int orderDetailID;
+        OrderDetailsBL orderDetailsBl;
         public frmPreviewOrderDetail(int orderDetailId)
         {
             InitializeComponent();
 
             orderDetailID = orderDetailId;
+            orderDetailsBl = new OrderDetailsBL();
         }
 
         private void frmPreviewOrderDetail_Load(object sender, EventArgs e)
@@ -27,10 +30,7 @@ namespace DrugiKolokvijumskiZadatak
             OrderDetailsDTO orderDetail = new OrderDetailsBL().GetOrderDetail(orderDetailID);
             ProductDTO product = new ProductBL().getProduct(orderDetail.ProductID);
 
-            lblProductName.Text = product.ProductName;
-            lblQuantity.Text = orderDetail.Quantity.ToString();
-            lblDiscount.Text = (orderDetail.Discount * 100).ToString() + "%";
-            lblPrice.Text = orderDetail.UnitPrice.ToString();
+            dataGrid.DataSource = orderDetailsBl.GetAllByOrder(orderDetailID);
         }
     }
 }
