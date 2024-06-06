@@ -52,9 +52,9 @@
             // 
             // btnUpdateOrder
             // 
-            this.btnUpdateOrder.Location = new System.Drawing.Point(646, 65);
+            this.btnUpdateOrder.Location = new System.Drawing.Point(617, 74);
             this.btnUpdateOrder.Name = "btnUpdateOrder";
-            this.btnUpdateOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateOrder.Size = new System.Drawing.Size(138, 43);
             this.btnUpdateOrder.TabIndex = 60;
             this.btnUpdateOrder.Text = "Update Order";
             this.btnUpdateOrder.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Location = new System.Drawing.Point(617, 186);
+            this.btnUpdateItem.Location = new System.Drawing.Point(617, 167);
             this.btnUpdateItem.Name = "btnUpdateItem";
-            this.btnUpdateItem.Size = new System.Drawing.Size(138, 24);
+            this.btnUpdateItem.Size = new System.Drawing.Size(138, 43);
             this.btnUpdateItem.TabIndex = 54;
             this.btnUpdateItem.Text = "Update Item";
             this.btnUpdateItem.UseVisualStyleBackColor = true;
