@@ -91,7 +91,7 @@ namespace DrugiKolokvijumskiZadatak
 
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void setup_datagrid()
         {
             dataGrid.Columns.Clear();
             // Display preview button for order details
@@ -128,6 +128,11 @@ namespace DrugiKolokvijumskiZadatak
             cmbProduct.DisplayMember = "ProductName";
             cmbProduct.ValueMember = "ProductID";
             cmbProduct.SelectedIndex = -1;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            setup_datagrid();
         }
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -158,41 +163,7 @@ namespace DrugiKolokvijumskiZadatak
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dataGrid.Columns.Clear();
-            // Display preview button for order details
-            DataGridViewButtonColumn btnColumnPreview = new DataGridViewButtonColumn();
-            btnColumnPreview.HeaderText = "Order Details";
-            btnColumnPreview.Text = "Preview";
-            btnColumnPreview.UseColumnTextForButtonValue = true; // Display text on button
-            btnColumnPreview.Name = "OrderDetails"; // Set the column name
-            dataGrid.Columns.Add(btnColumnPreview);
-
-            //Display edit button for order editing
-            DataGridViewButtonColumn btnColumnEdit = new DataGridViewButtonColumn();
-            btnColumnEdit.HeaderText = "Edit";
-            btnColumnEdit.Text = "Edit";
-            btnColumnEdit.UseColumnTextForButtonValue = true; // Display text on button
-            btnColumnEdit.Name = "Edit"; // Set the column name
-            dataGrid.Columns.Add(btnColumnEdit);
-
-            // Populate grid with data
-            dataGrid.DataSource = orderBl.GetAllOrders();
-
-            //Populate combo boxes
-            cmbEmployee.DataSource = employeeBl.GetAllEmployees();
-            cmbEmployee.DisplayMember = "FirstName";
-            cmbEmployee.ValueMember = "EmployeeID";
-            cmbEmployee.SelectedIndex = -1;
-
-            cmbCustomer.DataSource = customerBl.getAllCustomers();
-            cmbCustomer.DisplayMember = "CompanyName";
-            cmbCustomer.ValueMember = "CustomerID";
-            cmbCustomer.SelectedIndex = -1;
-
-            cmbProduct.DataSource = productBl.getAllProducts();
-            cmbProduct.DisplayMember = "ProductName";
-            cmbProduct.ValueMember = "ProductID";
-            cmbProduct.SelectedIndex = -1;
+            setup_datagrid();
         }
     }
 }
