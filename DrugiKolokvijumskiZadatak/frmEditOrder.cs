@@ -73,11 +73,12 @@ namespace DrugiKolokvijumskiZadatak
             cmbShipper.DataSource = shipperBl.getAllShippers();
             cmbShipper.DisplayMember = "CompanyName";
             cmbShipper.ValueMember = "ShipperID";
-
+            cmbShipper.SelectedValue = orderDTO.ShipVia;
 
             cmbCustomer.DataSource = customerBl.getAllCustomers();
             cmbCustomer.DisplayMember = "CompanyName";
             cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.SelectedValue = orderDTO.CustomerID;
 
             cmbProduct.DataSource = productBl.getAllProducts();
             cmbProduct.DisplayMember = "ProductName";
@@ -133,7 +134,10 @@ namespace DrugiKolokvijumskiZadatak
             {
                 orderDTO.CustomerID = cmbCustomer.SelectedValue.ToString();
                 orderDTO.EmployeeID = int.Parse(cmbEmployee.SelectedValue.ToString());
+                orderDTO.ShipVia = int.Parse(cmbShipper.SelectedValue.ToString());
                 orderBl.Save(orderDTO);
+
+                RenderTable();
 
 
                 MessageBox.Show("Order updated succesfully!");
