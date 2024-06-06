@@ -17,12 +17,16 @@ namespace DrugiKolokvijumskiZadatak
     {
         int orderDetailID;
         OrderDetailsBL orderDetailsBl;
+        OrderBL orderBL;
+        OrderDTO orderDTO;
+        CustomerBL customerBl;
         public frmPreviewOrderDetail(int orderDetailId)
         {
             InitializeComponent();
 
             orderDetailID = orderDetailId;
             orderDetailsBl = new OrderDetailsBL();
+            orderBL = new OrderBL();
         }
 
         private void frmPreviewOrderDetail_Load(object sender, EventArgs e)
@@ -30,7 +34,14 @@ namespace DrugiKolokvijumskiZadatak
             OrderDetailsDTO orderDetail = new OrderDetailsBL().GetOrderDetail(orderDetailID);
             ProductDTO product = new ProductBL().getProduct(orderDetail.ProductID);
 
+            //orderDTO = orderBL.GetOrder(orderDetail.OrderID);
+
             dataGrid.DataSource = orderDetailsBl.GetAllByOrder(orderDetailID);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

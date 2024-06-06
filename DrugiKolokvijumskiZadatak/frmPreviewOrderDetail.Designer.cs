@@ -35,18 +35,18 @@
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(28, 42);
+            this.dataGrid.Location = new System.Drawing.Point(26, 25);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 51;
             this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.Size = new System.Drawing.Size(687, 267);
+            this.dataGrid.Size = new System.Drawing.Size(733, 267);
             this.dataGrid.TabIndex = 3;
             // 
             // frmPreviewOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 336);
+            this.ClientSize = new System.Drawing.Size(784, 318);
             this.Controls.Add(this.dataGrid);
             this.Name = "frmPreviewOrderDetail";
             this.Text = "frmPreviewOrderDetail";
