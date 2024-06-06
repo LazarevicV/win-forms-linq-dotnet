@@ -37,14 +37,15 @@
             this.lblEmployee = new System.Windows.Forms.Label();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(470, 37);
+            this.btnReset.Location = new System.Drawing.Point(470, 28);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(114, 38);
             this.btnReset.TabIndex = 22;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -125,11 +126,22 @@
             this.dataGrid.TabIndex = 14;
             this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(773, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 38);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 480);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cmbProduct);
             this.Controls.Add(this.lblProduct);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Button button1;
     }
 }
 
