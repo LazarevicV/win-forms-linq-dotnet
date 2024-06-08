@@ -46,8 +46,9 @@ namespace DrugiKolokvijumskiZadatak
                     selectedProductId = (int)cmbProduct.SelectedValue;
                 }
 
-                var results = db.spSearchOrders(selectedEmployeeId, selectedCustomerId, selectedProductId).ToList();
-                dataGrid.DataSource = results.GroupBy(o => o.OrderID).Select(g => g.First()).ToList();
+                var orders = orderBl.SearchOrders(selectedEmployeeId, selectedCustomerId, selectedProductId);
+                dataGrid.DataSource = orders;
+                dataGrid.Refresh();
             }
         }
 

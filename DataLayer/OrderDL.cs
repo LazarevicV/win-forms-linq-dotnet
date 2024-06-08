@@ -71,5 +71,11 @@ namespace DataLayer
 
             return Mapper.convertToList(orders);
         }
+
+        public List<OrderDTO> SearchOrders(int? employeeID, string customerID, int? productID)
+        {
+            var results = _context.spSearchOrders(employeeID, customerID, productID).ToList();
+            return Mapper.convertToList(results);
+        }
     }
 }

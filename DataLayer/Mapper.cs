@@ -37,6 +37,29 @@ namespace DataLayer
             return emp;
         }
 
+        public static OrderDTO MapToDTO(spSearchOrders_Result result)
+        {
+            OrderDTO orderDTO = new OrderDTO();
+            orderDTO.OrderID = result.OrderID;
+            orderDTO.CustomerID = result.CustomerID;
+            orderDTO.EmployeeID = result.EmployeeID;
+            orderDTO.OrderDate = result.OrderDate;
+            orderDTO.RequiredDate = result.RequiredDate;
+            orderDTO.ShippedDate = result.ShippedDate;
+            orderDTO.ShipVia = result.ShipVia;
+            orderDTO.Freight = result.Freight;
+            orderDTO.ShipName = result.ShipName;
+            orderDTO.ShipAddress = result.ShipAddress;
+            orderDTO.ShipCity = result.ShipCity;
+            orderDTO.ShipRegion = result.ShipRegion;
+            orderDTO.ShipPostalCode = result.ShipPostalCode;
+            orderDTO.ShipCountry = result.ShipCountry;
+
+            return orderDTO;
+        }
+
+        
+
         public static OrderDetailsDTO MapToDTO(Order_Detail o)
         {
             OrderDetailsDTO od = new OrderDetailsDTO();
@@ -257,6 +280,17 @@ namespace DataLayer
 
             return l;
         }
+
+        public static List<OrderDTO> convertToList(List<spSearchOrders_Result> results)
+        {
+            List<OrderDTO> orderDTOs = new List<OrderDTO>();
+            foreach (var result in results)
+            {
+                orderDTOs.Add(MapToDTO(result));
+            }
+            return orderDTOs;
+        }
+
 
 
         #endregion

@@ -41,5 +41,10 @@ namespace BusinessLayer
         {
             return _orderDl.GetAll();
         }
+
+        public List<OrderDTO> SearchOrders(int? employeeID, string customerID, int? productID)
+        {
+            return _orderDl.SearchOrders(employeeID, customerID, productID);
+        }
     }
 }
